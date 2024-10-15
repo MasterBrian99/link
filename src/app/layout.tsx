@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Pasindu Pramodya | Link Page",
-  description: "Link Page",
+  description: "personal link sharing ",
 };
 
 export default function RootLayout({
@@ -26,6 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="icon.svg" type="image/svg+xml" sizes="any" />
+      <meta name="keywords" content="developer, pasindu pramodya,pasindu p konghawaththa,programmer, software engineer , software developer, web developer ,full stack developer, front end developer, website developer, github ,backend developer, java developer, portfolio,codeberg,littlelink"></meta>
+      <meta name="language" content="English"></meta>
+      <meta name="author" content="pasindu pramodya"></meta>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

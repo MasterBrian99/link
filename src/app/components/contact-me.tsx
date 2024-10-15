@@ -19,8 +19,11 @@ export default function ContactMe() {
           <a href="mailto:mail@pasindupramodya.com" className="text-lg font-medium hover:underline">
           mail@pasindupramodya.com
           </a>
+        
         </div>
+        
       </CardContent>
+      
     </Card>
   )
 }
