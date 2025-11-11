@@ -1,0 +1,57 @@
+{
+  "profile": {
+    "name": "Alex Rivera",
+    "title": "Software Engineer & Creative Developer",
+    "description": "Building beautiful digital experiences with code. Passionate about clean design, thoughtful engineering, and making the web more delightful.",
+    "avatar": "/src/assets/profile-illustration.png"
+  },
+  "links": [
+    {
+      "id": 1,
+      "title": "Portfolio",
+      "url": "https://example.com/portfolio",
+      "icon": "Briefcase",
+      "color": "yellow"
+    },
+    {
+      "id": 2,
+      "title": "GitHub",
+      "url": "https://github.com/silimer",
+      "icon": "Github",
+      "color": "pink"
+    },
+    {
+      "id": 3,
+      "title": "LinkedIn",
+      "url": "https://linkedin.com/in/silimer",
+      "icon": "Linkedin",
+      "color": "blue"
+    },
+    {
+      "id": 4,
+      "title": "Twitter",
+      "url": "https://twitter.com/silimer",
+      "icon": "Twitter",
+      "color": "green"
+    },
+    {
+      "id": 5,
+      "title": "Blog",
+      "url": "https://example.com/blog",
+      "icon": "BookOpen",
+      "color": "yellow"
+    },
+    {
+      "id": 6,
+      "title": "Email Me",
+      "url": "mailto:hello@alexrivera.dev",
+      "icon": "Mail",
+      "color": "pink"
+    }
+  ],
+  "footer": {
+    "quote": "Code is poetry written in logic.",
+    "author": "Anonymous",
+    "bottomText": "Built with passion & React ✨"
+  }
+}
