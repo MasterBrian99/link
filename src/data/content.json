@@ -1,57 +1,57 @@
 {
   "profile": {
-    "name": "Alex Rivera",
-    "title": "Software Engineer & Creative Developer",
-    "description": "Building beautiful digital experiences with code. Passionate about clean design, thoughtful engineering, and making the web more delightful.",
-    "avatar": "/src/assets/profile-illustration.png"
+    "name": "Pasindu Pramodya",
+    "title": "System Engineer & Creative Developer",
+    "description": "System engineer passionate about system engineering, performance optimization, and clean code",
+    "avatar": "/profile-illustration.png"
   },
   "links": [
     {
       "id": 1,
       "title": "Portfolio",
-      "url": "https://example.com/portfolio",
+      "url": "https://pasindupramodya.com",
       "icon": "Briefcase",
       "color": "yellow"
     },
     {
       "id": 2,
       "title": "GitHub",
-      "url": "https://github.com/silimer",
+      "url": "https://github.com/MasterBrian99",
       "icon": "Github",
       "color": "pink"
     },
     {
       "id": 3,
       "title": "LinkedIn",
-      "url": "https://linkedin.com/in/silimer",
+      "url": "https://www.linkedin.com/in/pasindu-p-konghawaththa-3808861a0",
       "icon": "Linkedin",
       "color": "blue"
     },
     {
       "id": 4,
       "title": "Twitter",
-      "url": "https://twitter.com/silimer",
+      "url": "https://x.com/Master_br1an",
       "icon": "Twitter",
       "color": "green"
     },
     {
       "id": 5,
       "title": "Blog",
-      "url": "https://example.com/blog",
+      "url": "https://blog.pasindupramodya.com/",
       "icon": "BookOpen",
       "color": "yellow"
     },
     {
       "id": 6,
       "title": "Email Me",
-      "url": "mailto:hello@alexrivera.dev",
+      "url": "mailto:mail@pasindupramodya.com",
       "icon": "Mail",
       "color": "pink"
     }
   ],
   "footer": {
-    "quote": "Code is poetry written in logic.",
-    "author": "Anonymous",
+    "quote": "The good thing about reinventing the wheel is that you can get a round one.",
+    "author": "Douglas Crockford",
     "bottomText": "Built with passion & React ✨"
   }
 }
