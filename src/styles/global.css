@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* Neobrutalism Design System */
+:root {
+  --border-width: 3px;
+  --shadow-offset: 4px;
+  --border-radius: 0px;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: #f7f5ff;
+  color: #1a1a2e;
+}
+
+.neobrutalism {
+  border: var(--border-width) solid #000;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
+  transition: all 0.2s ease;
+}
+
+.neobrutalism:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.neobrutalism:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.neobrutalism-button {
+  border: var(--border-width) solid #000;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
+  transition: all 0.2s ease;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  background-color: #ffd23f;
+}
+
+.neobrutalism-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.neobrutalism-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.neobrutalism-card {
+  border: var(--border-width) solid #000;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
+  transition: all 0.2s ease;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.neobrutalism-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.neobrutalism-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.neobrutalism-input {
+  border: var(--border-width) solid #000;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
+  transition: all 0.2s ease;
+  padding: 0.75rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+.neobrutalism-input:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.neobrutalism-input:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.color-yellow {
+  background-color: #ffd23f;
+}
+.color-pink {
+  background-color: #ff6b9d;
+}
+.color-blue {
+  background-color: #4ecdc4;
+}
+.color-green {
+  background-color: #95e77e;
+}
+.color-purple {
+  background-color: #a663cc;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f5ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border: 2px solid #f7f5ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}

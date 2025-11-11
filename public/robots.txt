@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://link.pasindupramodya.com/sitemap-index.xml

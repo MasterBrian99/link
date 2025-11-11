@@ -1,0 +1,173 @@
+---
+import "../styles/global.css";
+import ProfileIllustration from "../components/ProfileIllustration.astro";
+import LinkCard from "../components/LinkCard.tsx";
+import Footer from "../components/Footer.astro";
+import FloatingShapes from "../components/FloatingShapes.tsx";
+
+import contentData from "../data/content.json";
+
+const { profile, links, footer } = contentData;
+const pageTitle =
+  "Pasindu Pramodaya | Backend & Fullstack Developer Portfolio Links | Projects & Skills";
+const pageDescription =
+  "Explore the links of Pasindu Pramodaya, a software engineer with 4+ years experience in backend, fullstack, and real-time systems. Passionate about coding, photography, and gaming.";
+const pageUrl = "https://link.link.pasindupramodya.com";
+const pageImage = "https://link.link.pasindupramodya.com/og_image.png";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href="https://link.link.pasindupramodya.com/" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={pageImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={pageUrl} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={pageDescription} />
+    <meta property="twitter:image" content={pageImage} />
+
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pasindu Pramodaya",
+        "url": "https://link.pasindupramodya.com",
+        "sameAs": [
+          "https://github.com/MasterBrian99",
+          "https://www.linkedin.com/in/pasindu-p-konghawaththa-3808861a0/"
+        ],
+        "jobTitle": "Software Engineer",
+        "image": "https://link.pasindupramodya.com/profile.jpg",
+        "description": "Software engineer with 4+ years experience building scalable backend systems. Enjoys photography and gaming."
+      }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
+    <FloatingShapes client:load />
+
+    <main class="grow container mx-auto px-4 py-12 max-w-lg relative z-10">
+      <div class="neobrutalism-card profile-container mb-8 bg-white">
+        <ProfileIllustration
+          name={profile.name}
+          title={profile.title}
+          description={profile.description}
+          avatar={profile.avatar}
+        />
+      </div>
+
+      <div class="space-y-4 mb-8">
+        {
+          links.map((link, index) => (
+            <LinkCard
+              client:load
+              title={link.title}
+              url={link.url}
+              icon={link.icon}
+              color={link.color}
+              index={index}
+            />
+          ))
+        }
+      </div>
+
+      <Footer
+        quote={footer.quote}
+        author={footer.author}
+        bottomText={footer.bottomText}
+      />
+    </main>
+
+    <script>
+      // Animate profile container
+      document.addEventListener("DOMContentLoaded", () => {
+        const profileContainer = document.querySelector(".profile-container");
+        if (profileContainer) {
+          const element = profileContainer as HTMLElement;
+          element.style.opacity = "0";
+          element.style.transform = "translateY(20px)";
+          element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+          setTimeout(() => {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }, 100);
+        }
+
+        // Animate footer
+        const footerCard = document.querySelector(".footer-card");
+        if (footerCard) {
+          const element = footerCard as HTMLElement;
+          element.style.opacity = "0";
+          element.style.transform = "translateY(20px)";
+          element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+          setTimeout(() => {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }, 500);
+        }
+      });
+
+      // Add cursor trail effect
+      let mouseTimer: number | undefined;
+      document.addEventListener("mousemove", (e: MouseEvent) => {
+        clearTimeout(mouseTimer);
+        mouseTimer = window.setTimeout(() => {
+          const trail = document.createElement("div");
+          trail.className =
+            "fixed pointer-events-none neobrutalism w-4 h-4 rounded-full z-50";
+          trail.style.backgroundColor = [
+            "#FFD23F",
+            "#FF6B9D",
+            "#4ECDC4",
+            "#95E77E",
+            "#A663CC",
+          ][Math.floor(Math.random() * 5)];
+          trail.style.left = `${e.clientX}px`;
+          trail.style.top = `${e.clientY}px`;
+          trail.style.transition = "all 0.5s ease-out";
+          trail.style.opacity = "0.7";
+
+          document.body.appendChild(trail);
+
+          window.setTimeout(() => {
+            trail.style.transform = "scale(0)";
+            trail.style.opacity = "0";
+          }, 10);
+
+          window.setTimeout(() => {
+            document.body.removeChild(trail);
+          }, 500);
+        }, 50);
+      });
+    </script>
+  </body>
+</html>
