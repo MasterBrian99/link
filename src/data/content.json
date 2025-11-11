@@ -21,28 +21,42 @@
       "color": "pink"
     },
     {
+      "id": 8,
+      "title": "Codeberg",
+      "url": "https://codeberg.org/masterbr1an",
+      "icon": "Codeberg",
+      "color": "green"
+    },
+    {
       "id": 3,
+      "title": "Mastodon",
+      "url": "https://fosstodon.org/@masterbr1an",
+      "icon": "Mastodon",
+      "color": "yellow"
+    },
+    {
+      "id": 4,
       "title": "LinkedIn",
       "url": "https://www.linkedin.com/in/pasindu-p-konghawaththa-3808861a0",
       "icon": "Linkedin",
       "color": "blue"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Twitter",
       "url": "https://x.com/Master_br1an",
       "icon": "Twitter",
       "color": "green"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Blog",
       "url": "https://blog.pasindupramodya.com/",
       "icon": "BookOpen",
       "color": "yellow"
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Email Me",
       "url": "mailto:mail@pasindupramodya.com",
       "icon": "Mail",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Briefcase,
   Github,
@@ -8,25 +8,44 @@ import {
   Mail,
   ExternalLink,
 } from "lucide-react";
-
 interface LinkCardProps {
   title: string;
   url: string;
   icon: string;
   color: string;
+  index?: number;
 }
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, React.ElementType | string> = {
   Briefcase: Briefcase,
   Github: Github,
   Linkedin: Linkedin,
   Twitter: Twitter,
   BookOpen: BookOpen,
   Mail: Mail,
+  Mastodon: "/mastodon.svg",
+  Codeberg: "/codeberg.svg",
 };
 
-const LinkCard: React.FC<LinkCardProps> = ({ title, url, icon, color }) => {
+const LinkCard: React.FC<LinkCardProps> = ({
+  title,
+  url,
+  icon,
+  color,
+  index = 0,
+}) => {
   const IconComponent = iconMap[icon] || iconMap["Briefcase"];
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Only run on client side
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, index * 100);
+
+    return () => clearTimeout(timer);
+  }, [index]);
 
   const handleClick = (e: React.MouseEvent) => {
     // Simple confetti effect
@@ -77,12 +96,27 @@ const LinkCard: React.FC<LinkCardProps> = ({ title, url, icon, color }) => {
       rel="noopener noreferrer"
       className="block w-full mb-4 group "
       onClick={handleClick}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.5s ease, transform 0.5s ease",
+      }}
     >
       <div
+        ref={cardRef}
         className={`neobrutalism-card color-${color} flex items-center p-4 transform transition-all duration-200 hover:scale-105`}
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateY(0)" : "translateY(20px)",
+          transition: "opacity 0.5s ease, transform 0.5s ease",
+        }}
       >
         <div className="neobrutalism w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4 shrink-0">
-          <IconComponent className="w-6 h-6" />
+          {typeof IconComponent === "string" ? (
+            <img src={IconComponent} alt={icon} className="w-6 h-6" />
+          ) : (
+            <IconComponent className="w-6 h-6" />
+          )}
         </div>
         <div className="grow">
           <h3 className="font-bold text-lg">{title}</h3>

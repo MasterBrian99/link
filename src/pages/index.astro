@@ -9,11 +9,11 @@ import contentData from "../data/content.json";
 
 const { profile, links, footer } = contentData;
 const pageTitle =
-  "Pasindu Pramodaya | Backend & Fullstack Developer Portfolio | Projects & Skills";
+  "Pasindu Pramodaya | Backend & Fullstack Developer Portfolio Links | Projects & Skills";
 const pageDescription =
-  "Explore the portfolio of Pasindu Pramodaya, a software engineer with 4+ years experience in backend, fullstack, and real-time systems. Passionate about coding, photography, and gaming.";
-const pageUrl = "https://pasindupramodya.com";
-const pageImage = "https://pasindupramodya.com/og_image.png";
+  "Explore the links of Pasindu Pramodaya, a software engineer with 4+ years experience in backend, fullstack, and real-time systems. Passionate about coding, photography, and gaming.";
+const pageUrl = "https://link.link.pasindupramodya.com";
+const pageImage = "https://link.link.pasindupramodya.com/og_image.png";
 ---
 
 <html lang="en">
@@ -21,7 +21,7 @@ const pageImage = "https://pasindupramodya.com/og_image.png";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="canonical" href="https://pasindupramodya.com/" />
+    <link rel="canonical" href="https://link.link.pasindupramodya.com/" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -51,13 +51,13 @@ const pageImage = "https://pasindupramodya.com/og_image.png";
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Pasindu Pramodaya",
-        "url": "https://pasindupramodya.com",
+        "url": "https://link.pasindupramodya.com",
         "sameAs": [
           "https://github.com/MasterBrian99",
           "https://www.linkedin.com/in/pasindu-p-konghawaththa-3808861a0/"
         ],
         "jobTitle": "Software Engineer",
-        "image": "https://pasindupramodya.com/profile.jpg",
+        "image": "https://link.pasindupramodya.com/profile.jpg",
         "description": "Software engineer with 4+ years experience building scalable backend systems. Enjoys photography and gaming."
       }
     </script>
@@ -74,7 +74,7 @@ const pageImage = "https://pasindupramodya.com/og_image.png";
     <FloatingShapes client:load />
 
     <main class="grow container mx-auto px-4 py-12 max-w-lg relative z-10">
-      <div class="neobrutalism-card mb-8 bg-white">
+      <div class="neobrutalism-card profile-container mb-8 bg-white">
         <ProfileIllustration
           name={profile.name}
           title={profile.title}
@@ -85,13 +85,14 @@ const pageImage = "https://pasindupramodya.com/og_image.png";
 
       <div class="space-y-4 mb-8">
         {
-          links.map((link) => (
+          links.map((link, index) => (
             <LinkCard
               client:load
               title={link.title}
               url={link.url}
               icon={link.icon}
               color={link.color}
+              index={index}
             />
           ))
         }
@@ -105,11 +106,11 @@ const pageImage = "https://pasindupramodya.com/og_image.png";
     </main>
 
     <script>
-      // Add page load animation
+      // Animate profile container
       document.addEventListener("DOMContentLoaded", () => {
-        const elements = document.querySelectorAll(".neobrutalism-card, a");
-        elements.forEach((el, index) => {
-          const element = el as HTMLElement;
+        const profileContainer = document.querySelector(".profile-container");
+        if (profileContainer) {
+          const element = profileContainer as HTMLElement;
           element.style.opacity = "0";
           element.style.transform = "translateY(20px)";
           element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
@@ -117,8 +118,22 @@ const pageImage = "https://pasindupramodya.com/og_image.png";
           setTimeout(() => {
             element.style.opacity = "1";
             element.style.transform = "translateY(0)";
-          }, index * 100);
-        });
+          }, 100);
+        }
+
+        // Animate footer
+        const footerCard = document.querySelector(".footer-card");
+        if (footerCard) {
+          const element = footerCard as HTMLElement;
+          element.style.opacity = "0";
+          element.style.transform = "translateY(20px)";
+          element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+          setTimeout(() => {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }, 500);
+        }
       });
 
       // Add cursor trail effect
